@@ -9,6 +9,21 @@ const getOneItem = function (productId) {
 //   const itemDetails = await itemDetails.findOne({vendorLocation: "California"});
 //   return itemDetails;
 // }
+const addOneItem = () => {
+  
+}
+
+const updateOneItem = () => {
+
+}
+
+const deleteOneItem = (productId) => {
+  return itemDetails.findByIdAndRemove({productId});
+}
 module.exports = {
   getOneItem,
+  addOneItem,
+  updateOneItem,
+  deleteOneItem
+
 };

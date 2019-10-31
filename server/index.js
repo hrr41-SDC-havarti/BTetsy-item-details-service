@@ -16,14 +16,31 @@ app.use((req, res, next) => {
 
 app.get('/api/description/:productId', (req, res) => {
   const productId = req.params.productId;
-  console.log(productId);
   models.getOneItem(productId)
     .then((value) => res.status(200).json(value))
     .catch((err) => {
-      res.status(404)
+      res.status(400)
       res.send('Product not found');
     });
 });
+
+//app.post()
+
+app.delete('/api/description', (req, res) => {
+  console.log(req.query.productId)
+  const productId = req.query.productId;
+  models.deleteOneItem(productId)
+    .then((val) => res.status(200).json(val))
+    .catch((err) => {
+      console.log(err)
+      res.status(400).send('Product not found/Unable to delete')
+    })
+})
+
+//app.put()
+
+
+
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
