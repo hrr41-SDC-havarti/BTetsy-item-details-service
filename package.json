@@ -10,6 +10,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "seedDb": "node server/database/seed.js",
+    "seed": "node server/seeding/testSeed.js",
     "test": "jest",
     "build": "webpack -d --watch"
   },
@@ -23,6 +24,7 @@
     "babel-polyfill": "^6.26.0",
     "bluebird": "^3.7.0",
     "bootstrap": "^4.3.1",
+    "cql": "0.0.9",
     "eslint-plugin-jest": "^22.19.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
@@ -60,6 +62,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "faker": "^4.1.0",
     "jest": "^24.9.0"
   }
 }
