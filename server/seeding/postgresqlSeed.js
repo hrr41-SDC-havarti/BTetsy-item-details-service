@@ -21,7 +21,7 @@ const seed = async () => {
     console.error(err);
   }
   let startTime = Date.now();
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10000000; i++) {
     const thisProduct = generateData()
     try {
       await pool.query(`insert into products (data) values ('${thisProduct}')`)
@@ -30,7 +30,8 @@ const seed = async () => {
       console.error(err);
     }
   }
-  console.log(`finished seeding in ${((Date.now() - startTime) / 1000/60).toFixed(2)}`)
+  let totalTime = (((Date.now() - startTime)/1000)/60).toFixed(2)
+  console.log(`finished seeding in ${totalTime}`)
 
 }
 seed()

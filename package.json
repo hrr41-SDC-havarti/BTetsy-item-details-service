@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "seedDb": "node server/database/seed.js",
-    "seed": "node server/seeding/postgresqlSeed.js",
+    "seedpg": "node server/seeding/postgresqlSeed.js",
+    "seedcass": "node server/seeding/cassandraSeed.js",
     "test": "jest",
     "build": "webpack -d --watch"
   },
@@ -24,6 +25,7 @@
     "babel-polyfill": "^6.26.0",
     "bluebird": "^3.7.0",
     "bootstrap": "^4.3.1",
+    "cassandra-driver": "^4.3.0",
     "cql": "0.0.9",
     "eslint-plugin-jest": "^22.19.0",
     "express": "^4.17.1",
