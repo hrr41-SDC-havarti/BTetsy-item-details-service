@@ -13,8 +13,10 @@
     "seedpg": "node server/seeding/postgresqlSeed.js",
     "seedcass": "node server/seeding/cassandraSeed.js",
     "seedcsv": "node server/seeding/itemGenerate.js",
+    "postgress": "node server/database/pgPool.js",
     "test": "jest",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "pg": "node --max_old_space_size=12288 server/database/pgCopy.js"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.6.2",
