@@ -21,7 +21,7 @@ const seed = async () => {
     console.error(err);
   }
   let startTime = Date.now();
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000000; i++) {
     const thisProduct = generateData()
     try {
       await pool.query(`insert into products (data) values ('${thisProduct}')`)
@@ -30,7 +30,90 @@ const seed = async () => {
       console.error(err);
     }
   }
-  console.log(`finished seeding in ${((Date.now() - startTime) / 1000/60).toFixed(2)}`)
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  for (let i = 0; i < 1000000; i++) {
+    const thisProduct = generateData()
+    try {
+      await pool.query(`insert into products (data) values ('${thisProduct}')`)
+    } catch (err) {
+      console.log(thisProduct)
+      console.error(err);
+    }
+  }
+  
+
+  let totalTime = (((Date.now() - startTime)/1000)/60).toFixed(2)
+  console.log(`finished seeding in ${totalTime}`)
 
 }
 seed()

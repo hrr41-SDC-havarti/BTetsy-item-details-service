@@ -6,7 +6,8 @@
  */
 
 
-module.exports = {
-  extends: "airbnb",
-  plugins: ["jest"]
-};
+// module.exports = {
+//   extends: "airbnb",
+//   plugins: ["jest"]
+// };
+
