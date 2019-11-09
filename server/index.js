@@ -1,5 +1,8 @@
 const express = require('express');
-const models = require('./database/models.js');
+// const models = require('./database/models.js');
+const models = require('./database/pgControllers.js');
+
+
 
 const app = express();
 app.use(express.json());
@@ -14,40 +17,35 @@ app.use((req, res, next) => {
 });
 
 //working
-app.get('/api/description/:productId', (req, res) => {
-  const productId = req.params.productId;
-  models.getOneItem(productId)
-    .then((val) => res.status(200).json(val))
-    .catch((err) => {
-      res.status(400)
-      res.send(err);
-    });
-});
-//working to get all descriptions
-app.get('/api/description', (req, res) => {
-  console.log(req.body)
-  models.getAllItems(req.body)
-    .then((val) => res.status(200).json(val))
-    .catch((err) => {
-      res.status(400).send(err)
-    });
-});
+// app.get('/api/description/:productId', (req, res) => {
+//   const productId = req.params.productId;
+//   console.log(req.body)
+//   models.getOne(productId)
+//     .then((val) => res.status(200).json(val))
+//     .catch((err) => {
+//       res.status(400)
+//       res.send(err);
+//     });
+// });
+app.get('/api/description/:productId', models.getOne)
+
 
 //working
-app.post('/api/description', (req, res) => {
-  const product = req.body;
-  models.addOneItem(product)
-  .then((val) => res.status(200).json(val))
-  .catch((err) => {
-    res.status(400).send(err)
-  })
+app.post('/api/description', models.addOne);
+// app.post('/api/description', (req, res) => {
+//   const product = req.body;
+//   models.addOne(product)
+//   .then((val) => res.status(200).json(val))
+//   .catch((err) => {
+//     res.status(400).send(err)
+//   })
 
-})
+// })
 //not working yet vvvv
 app.put('/api/description/:productId', (req, res) => {
   console.log('HEY')
   const productId = req.query.productId;
-  models.updateOneItem(productId, req.body)
+  models.updateOne(productId, req.body)
     .then((val) => res.status(200).json(val))
     .catch((err) => {
       res.status(400).send(err)
@@ -55,16 +53,17 @@ app.put('/api/description/:productId', (req, res) => {
 })
 
 //working
-app.delete('/api/description', (req, res) => {
-  console.log(req.query.productId)
-  const productId = req.query.productId;
-  models.deleteOneItem(productId)
-    .then((val) => res.status(200).json(val))
-    .catch((err) => {
-      console.log(err)
-      res.status(400).send('Unable to delete ', err)
-    })
-})
+// app.delete('/api/description', (req, res) => {
+//   console.log(req.query.productId)
+//   const productId = req.query.productId;
+//   models.deleteOne(productId)
+//     .then((val) => res.status(200).json(val))
+//     .catch((err) => {
+//       console.log(err)
+//       res.status(400).send('Unable to delete ', err)
+//     })
+// })
+app.delete('/api/description/:productId', models.deleteOne)
 
 
 
