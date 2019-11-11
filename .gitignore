@@ -27,3 +27,5 @@ dist/bundle.js
 data.csv
 
 product.csv
+
+newrelic.js

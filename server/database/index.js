@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/BTetsy', { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((error) => error);
+
+
 const itemDetailsSchema = new mongoose.Schema({
   vendorName: String,
   vendorFirstName: String,
@@ -15,6 +17,9 @@ const itemDetailsSchema = new mongoose.Schema({
 });
 
 const itemDetails = mongoose.model('itemDetails', itemDetailsSchema);
+
+
+
 
 
 

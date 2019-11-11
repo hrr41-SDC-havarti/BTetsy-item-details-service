@@ -30,7 +30,7 @@ const getOne = (req, res) => {
 
 const addOne = (req, res) => {
   let item = req.body;
-  let queryStr =`insert into products (item) values ('${item}')`;
+  let queryStr =`insert into products ('${item}')`;
   console.log(item)
   pool.query(`insert into products (productId, vendorName, vendorFirstName, vendorCountry, shopPolicies, faq, vendorPhoto, vendorResponseTime, product) values ('${item.productId, item.vendorName, item.vendorFirstName, item.vendorCountry, item.shopPolicies, item.faq, item.vendorPhoto, item.vendorResponseTime, item.product}')`, (err, results) => {
     if (err) {

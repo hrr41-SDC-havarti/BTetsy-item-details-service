@@ -1,3 +1,4 @@
+require('newrelic')
 const express = require('express');
 // const models = require('./database/models.js');
 const models = require('./database/pgControllers.js');
