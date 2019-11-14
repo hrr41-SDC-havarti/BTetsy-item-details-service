@@ -43,15 +43,15 @@ app.post('/api/description', models.addOne);
 
 // })
 //not working yet vvvv
-app.put('/api/description/:productId', (req, res) => {
-  console.log('HEY')
-  const productId = req.query.productId;
-  models.updateOne(productId, req.body)
-    .then((val) => res.status(200).json(val))
-    .catch((err) => {
-      res.status(400).send(err)
-    })
-})
+// app.put('/api/description/:productId', (req, res) => {
+//   console.log('HEY')
+//   const productId = req.query.productId;
+//   models.updateOne(productId, req.body)
+//     .then((val) => res.status(200).json(val))
+//     .catch((err) => {
+//       res.status(400).send(err)
+//     })
+// })
 
 //working
 // app.delete('/api/description', (req, res) => {
