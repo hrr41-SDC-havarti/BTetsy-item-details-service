@@ -34,7 +34,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "jest-cli": "^24.9.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json2csv": "^4.5.4",
     "mongoose": "^5.7.4",
     "newrelic": "^6.1.0",
